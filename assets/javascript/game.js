@@ -22,23 +22,23 @@ randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
 console.log(randomLetter);
 
 
-//document.onkeypress = function() {game()};
-//function game () {
-//    if (guessedLetter === randomLetter);
-//        winsStart++;
-//            function resetGame() {
-//                winsStart = 0;
-//                lossesStart = 0;
-//                guesses = 9;
-//                alreadyGuessed = [];
-//            }
-//    else (guessedLetter !== randomLetter);
-//        guesses--;
-//        alreadyGuessed.push(guessedLetter);
-//            if (guesses < 1); 
-//                lossesStart++;
-//                resetGame();
-//}
+document.onkeypress = function() {game()};
+    function game () {
+        if (guessedLetter === randomLetter);
+            winsStart++;
+                function resetGame() {
+                    winsStart = 0;
+                    lossesStart = 0;
+                    guesses = 9;
+                    alreadyGuessed = [];
+                }
+        else (guessedLetter !== randomLetter);
+            guesses--;
+            alreadyGuessed.push(guessedLetter);
+                if (guesses < 1); 
+                    lossesStart++;
+                    resetGame();
+}
 
 //when a key is pressed;
     //if - key matches randomLetter
