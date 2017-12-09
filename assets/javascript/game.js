@@ -36,6 +36,7 @@ console.log(randomLetter);
 //        guesses--;
 //        alreadyGuessed.push(guessedLetter);
 //            if (guesses < 1); 
+//                lossesStart++;
 //                resetGame();
 //}
 
