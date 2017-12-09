@@ -1,16 +1,30 @@
+
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var randomLetter;
+var alreadyGuessed = [];
+var winsStart = 0;
+var lossesStart = 0;
+var guesses = 9;
+
 //Wins and losses start at 0
+document.getElementById("winStart").innerHTML = winsStart;
+document.getElementById("lossStart").innerHTML = lossesStart;
 
 //Guesses start at 9
+document.getElementById("guessStart").innerHTML = guesses;
 
 //Generate random letter from alphabet to guess
+randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
 
-//Game starts when letter is pressed. Continues until either letter is selected, or 9 guesses are gone. 
+console.log(randomLetter);
 
-//Display letters guessed and remove them from selection
 
-//If random letter is guessed, wins +1
 
-//If random letter is not guessed (guesses = 0), losses +1
-
-//If either guesses left = 0, or letter is guessed, game restarts on next letter press. Chooses new random letter, guesses so far resets, guesses left goes to 9
-
+//when a key is pressed;
+    //if - key matches randomLetter
+        //add +1 to winsStart
+        //reset game (guesses back to 9, alreadyGuessed cleared, new random letter)
+    //else - key does not match randomLetter
+        //decrease guesses -1
+        //push letter to alreadyGuessed array
+        //continue these 2 steps until guesses = 0 = reset game (lossesStart +1, guesses back to 9, alreadyGuessed cleared, new random letter)
