@@ -24,6 +24,7 @@ console.log(randomLetter);
 
 function resetGame() {
     guesses = 9;
+    document.getElementById("guessStart").innerHTML = guesses;
     alreadyGuessed.length = 0;
     document.getElementById("alreadyGuessed").innerHTML = alreadyGuessed;
     randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
