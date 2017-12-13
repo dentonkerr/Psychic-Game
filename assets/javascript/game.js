@@ -5,6 +5,7 @@ var alreadyGuessed = [];
 var winsStart = 0;
 var lossesStart = 0;
 var guesses = 9;
+var guessedLetter;
 
 //Wins and losses start at 0
 document.getElementById("winStart").innerHTML = winsStart;
@@ -21,24 +22,62 @@ randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
 
 console.log(randomLetter);
 
-
-document.onkeypress = function() {game()};
-    function game () {
-        if (guessedLetter === randomLetter);
-            winsStart++;
-                function resetGame() {
-                    winsStart = 0;
-                    lossesStart = 0;
-                    guesses = 9;
-                    alreadyGuessed = [];
-                }
-        else (guessedLetter !== randomLetter);
-            guesses--;
-            alreadyGuessed.push(guessedLetter);
-                if (guesses < 1); 
-                    lossesStart++;
-                    resetGame();
+function resetGame() {
+    guesses = 9;
+    alreadyGuessed = [];
+    randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
 }
+console.log(resetGame);
+
+document.onkeyup = function game (event) {
+    var guessedLetter = event.key;
+
+    console.log (guessedLetter);
+    
+    //if (guessedLetter === "alphabet") {  //check against alphabet array as acceptable answer
+        
+        if (guessedLetter === randomLetter) {
+            console.log('got it');
+            winsStart++;
+            document.getElementById("winStart").innerHTML = winsStart;
+            resetGame();
+        }
+
+        else if (guessedLetter !== randomLetter) {
+            console.log('try again');
+            guesses--;
+            document.getElementById("guessStart").innerHTML = guesses;
+            alreadyGuessed.push(guessedLetter);
+            document.getElementById("alreadyGuessed").innerHTML = alreadyGuessed;
+        };
+    
+
+                if (guesses < 1) {
+                  lossesStart++;
+                  document.getElementById("lossStart").innerHTML = lossesStart;  
+                  resetGame();
+                };
+};
+
+//console.log (document.onkeyup);
+
+//document.onkeypress = function() {game()};
+//    function game () {
+//        if (guessedLetter === randomLetter);
+//            winsStart++;
+//                function resetGame() {
+//                    winsStart = 0;
+//                    lossesStart = 0;
+//                    guesses = 9;
+//                    alreadyGuessed = [];
+//                }
+//        else (guessedLetter !== randomLetter);
+//            guesses--;
+//            alreadyGuessed.push(guessedLetter);
+//                if (guesses < 1); 
+//                    lossesStart++;
+//                    resetGame();
+//}
 
 //when a key is pressed;
     //if - key matches randomLetter
