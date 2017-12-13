@@ -26,6 +26,8 @@ function resetGame() {
     guesses = 9;
     alreadyGuessed.length = 0;
     document.getElementById("alreadyGuessed").innerHTML = alreadyGuessed;
+    randomLetter = alphabet[Math.floor(Math.random()*alphabet.length)];
+    console.log (randomLetter);
 }
 console.log(resetGame);
 
@@ -37,14 +39,12 @@ document.onkeyup = function game (event) {
     //if (guessedLetter === "alphabet") {  //check against alphabet array as acceptable answer
         
         if (guessedLetter === randomLetter) {
-            console.log('got it');
             winsStart++;
             document.getElementById("winStart").innerHTML = winsStart;
             resetGame();
         }
 
         else if (guessedLetter !== randomLetter) {
-            console.log('try again');
             guesses--;
             document.getElementById("guessStart").innerHTML = guesses;
             alreadyGuessed.push(guessedLetter);
