@@ -36,8 +36,6 @@ document.onkeyup = function game (event) {
     var guessedLetter = event.key;
 
     console.log (guessedLetter);
-    
-    //if (guessedLetter === "alphabet") {  //check against alphabet array as acceptable answer
         
         if (guessedLetter === randomLetter) {
             winsStart++;
@@ -59,32 +57,3 @@ document.onkeyup = function game (event) {
                   resetGame();
                 };
 };
-
-//console.log (document.onkeyup);
-
-//document.onkeypress = function() {game()};
-//    function game () {
-//        if (guessedLetter === randomLetter);
-//            winsStart++;
-//                function resetGame() {
-//                    winsStart = 0;
-//                    lossesStart = 0;
-//                    guesses = 9;
-//                    alreadyGuessed = [];
-//                }
-//        else (guessedLetter !== randomLetter);
-//            guesses--;
-//            alreadyGuessed.push(guessedLetter);
-//                if (guesses < 1); 
-//                    lossesStart++;
-//                    resetGame();
-//}
-
-//when a key is pressed;
-    //if - key matches randomLetter
-        //add +1 to winsStart
-        //reset game (guesses back to 9, alreadyGuessed cleared, new random letter)
-    //else - key does not match randomLetter
-        //decrease guesses -1
-        //push letter to alreadyGuessed array and make it not selectable again this game
-        //continue these 2 steps until guesses = 0 = reset game (lossesStart +1, guesses back to 9, alreadyGuessed cleared, new random letter)
